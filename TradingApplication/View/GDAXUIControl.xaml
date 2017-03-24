@@ -1,0 +1,112 @@
+﻿<UserControl x:Class="TradingApplication.View.GDAXUIControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TradingApplication"
+             xmlns:ViewModel="clr-namespace:TradingApplication.ViewModel"
+
+             mc:Ignorable="d" 
+             Background="{ StaticResource Background_application}"
+             d:DesignHeight="300" d:DesignWidth="300"
+             d:DataContext="{d:DesignInstance ViewModel:Presenter}">
+    
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Margin="2" Grid.Row="0" Background="{StaticResource Background_application_header}" Orientation="Horizontal">
+                    <TextBlock Text="GDAX" Margin="8" FontSize="15" Foreground="{StaticResource Background_application}"></TextBlock>
+                    <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="5"/>
+                    <ComboBox
+                        VerticalContentAlignment="Center" x:Name="CBO_products" ItemsSource="{Binding HeaderProductList.Result}" DisplayMemberPath="display_name" SelectedValuePath="id"
+                        FontSize="15" SelectedValue="SelectedProduct" SelectedItem="{Binding SelectedProduct}">
+                    </ComboBox>
+                    <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="5"/>
+                    <StackPanel Margin="8">
+                        <Label x:Name="LBL_LastTradePrice" FontSize="15" TextBlock.Foreground="{StaticResource Background_application}" Content="{Binding HeaderTradePrice}" />
+                        <TextBlock Foreground="{StaticResource Background_application}" Text="Last trade price" />
+                    </StackPanel>
+                </StackPanel>
+                <!--
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <ListView Grid.Row="0" x:Name="listView" ItemsSource="{Binding product_list}" Background="Transparent">
+                    <ListView.DataContext>
+                        <local:Products/>
+                    </ListView.DataContext>
+                    <ListView.View>
+                        <GridView>
+                            <GridView.ColumnHeaderContainerStyle>
+                                <Style TargetType="{x:Type GridViewColumnHeader}">
+                                    <Setter Property="Background" Value="{StaticResource Background_module_header}" />
+                                    <Setter Property="Foreground" Value="{StaticResource Font_color_maintext}" />
+                                </Style>
+                            </GridView.ColumnHeaderContainerStyle>
+                            <GridViewColumn Header="ID">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Path=id}" Foreground="{StaticResource Font_color_maintext}"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Display Name">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Path=display_name}" Foreground="{StaticResource Font_color_maintext}"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Base Currency">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Path=base_currency}" Foreground="{StaticResource Font_color_maintext}"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Base Min Size">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Path=base_min_size}" Foreground="{StaticResource Font_color_maintext}"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Base Max Size">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Path=base_max_size}" Foreground="{StaticResource Font_color_maintext}"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Quote Currency">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Path=quote_currency}" Foreground="{StaticResource Font_color_maintext}"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Quote Increment">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Path=quote_increment}" Foreground="{StaticResource Font_color_maintext}"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Button Grid.Row="1" 
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Bottom"
+                        Content="Get The Damn Products!"
+                        Margin="2"
+                        Padding="5,0" 
+                        Name="BTN_Nothing" Click="BTN_Nothing_Click"/>
+       
+
+        -->
+            </Grid>
+</UserControl>

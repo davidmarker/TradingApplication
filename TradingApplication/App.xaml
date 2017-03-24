@@ -1,0 +1,9 @@
+﻿<Application x:Class="TradingApplication.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:TradingApplication"
+             StartupUri="/View/MainWindow.xaml">
+    <Application.Resources>
+            <ResourceDictionary Source="/Resources/MainBrushes.xaml"/>
+    </Application.Resources>
+</Application>

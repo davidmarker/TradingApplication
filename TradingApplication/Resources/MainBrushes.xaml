@@ -1,0 +1,27 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:TradingApplication">
+
+
+    <SolidColorBrush x:Key="Background_application" Color="#15232c"></SolidColorBrush>
+    <SolidColorBrush x:Key="Background_application_header" Color="#fff"></SolidColorBrush>
+    <SolidColorBrush x:Key="Background_module_header" Color="#444f56"></SolidColorBrush>
+    <SolidColorBrush x:Key="Background_table" Color="#15232c"></SolidColorBrush>
+    <SolidColorBrush x:Key="Font_color_maintext" Color="#ced2d5"></SolidColorBrush>
+
+
+<!--
+    <SolidColorBrush x:Key="" Color="#44be24"></SolidColorBrush>
+
+    <SolidColorBrush x:Key="" Color="#ef4f1b"></SolidColorBrush>
+    <SolidColorBrush x:Key="" Color="#ced2d5"></SolidColorBrush>
+    <SolidColorBrush x:Key="" Color="#"></SolidColorBrush>
+    <SolidColorBrush x:Key="" Color="#"></SolidColorBrush>
+    <SolidColorBrush x:Key="" Color="#"></SolidColorBrush>
+    <SolidColorBrush x:Key="" Color="#"></SolidColorBrush>
+    <SolidColorBrush x:Key="" Color="#"></SolidColorBrush>
+    <SolidColorBrush x:Key="" Color="#"></SolidColorBrush>
+    <SolidColorBrush x:Key="" Color="#"></SolidColorBrush>
+    <SolidColorBrush x:Key="" Color="#"></SolidColorBrush>
+    -->
+</ResourceDictionary>

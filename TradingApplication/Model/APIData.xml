@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <config_API_Passphrase></config_API_Passphrase>
+  <config_API_Key></config_API_Key>
+  <config_API_Secret></config_API_Secret>
+  <UserAgent></UserAgent>
+</root>
