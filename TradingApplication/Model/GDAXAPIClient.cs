@@ -24,7 +24,7 @@ namespace TradingApplication.Model
 
         static GDAXAPIClient()
         {
-            XElement Xdoc = XElement.Load("Model\\APIData.xml");
+            XElement Xdoc = XElement.Load("APIData.xml");
             IEnumerable<XElement> childList =
             from el in Xdoc.Elements()
             select el;
