@@ -120,6 +120,33 @@ namespace TradingApplication.Model
             return await Task.Run(() => myprodstats);
         }
 
+        public static async Task<Accounts> GetAccountsAsync()
+        {
+            string ts = GetNonce();
+            string method = "/accounts";
+            string str_GDAX_Main = "https://api.gdax.com";
+            string sig = GetSignature(ts, "GET", method, string.Empty);
+            Accounts myaccounts = new Accounts();
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(str_GDAX_Main);
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                client.DefaultRequestHeaders.Add("CB-ACCESS-KEY", config_API_Key);
+                client.DefaultRequestHeaders.Add("CB-ACCESS-SIGN", sig);
+                client.DefaultRequestHeaders.Add("CB-ACCESS-TIMESTAMP", ts);
+                client.DefaultRequestHeaders.Add("CB-ACCESS-PASSPHRASE", config_API_Passphrase);
+                client.DefaultRequestHeaders.Add("User-Agent", UserAgent);
+                HttpResponseMessage response = client.GetAsync(method).Result;
+                response.EnsureSuccessStatusCode();
+
+                string json = await response.Content.ReadAsStringAsync();
+                myaccounts.account_list = JsonConvert.DeserializeObject<List<Account>>(json);
+                
+            }
+            return myaccounts;
+        }
+
         public static string GetNonce()
         {
             return (DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds.ToString();
